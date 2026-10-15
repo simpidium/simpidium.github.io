@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simpidium Labs</title>
+<meta name="description" content="We build.">
+<meta name="theme-color" content="#0D0E10">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://simpidium.com/">
+<meta property="og:title" content="Simpidium Labs">
+<meta property="og:description" content="We build.">
+<meta property="og:image" content="https://simpidium.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Simpidium">
+<link rel="preload" href="/fonts/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face {
+    font-family: "Geist";
+    src: url("/fonts/Geist-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Geist";
+    src: url("/fonts/Geist-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+  }
+  :root {
+    --bg: #0D0E10;
+    --fg: #FFFFFF;
+    --muted: #8E8E92;
+    --accent: #1E7A8C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 0 24px;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mark { display: inline-block; }
+  h1 {
+    font-weight: 500;
+    font-size: clamp(48px, 10vw, 112px);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .dot {
+    display: inline-block;
+    width: 0.12em;
+    height: 0.12em;
+    margin-left: 0.05em;
+    background: var(--accent);
+  }
+  .sub {
+    margin-top: 0.62em;
+    font-size: clamp(11px, 2.35vw, 26px);
+    font-weight: 400;
+    letter-spacing: 0.42em;
+    color: var(--muted);
+    padding-left: 0.02em;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 28px 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  footer a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .2s ease;
+  }
+  footer a:hover, footer a:focus-visible { color: var(--fg); }
+</style>
+</head>
+<body>
+  <main>
+    <div class="mark" aria-label="Simpidium Laboratories">
+      <h1>Simpidium<span class="dot" aria-hidden="true"></span></h1>
+      <p class="sub">LABORATORIES</p>
+    </div>
+  </main>
+  <footer>
+    <span>We build.</span>
+    <a href="mailto:lab@simpidium.com">lab@simpidium.com</a>
+  </footer>
+</body>
+</html>
