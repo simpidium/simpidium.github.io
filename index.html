@@ -84,7 +84,8 @@
     font-size: 14px;
     color: var(--muted);
   }
-  footer nav { display: flex; gap: 24px; }
+  footer nav { display: flex; gap: 24px; align-items: baseline; }
+  .xlogo { height: 0.72em; width: auto; fill: currentColor; display: inline-block; vertical-align: baseline; transform: translateY(0.02em); }
   footer a {
     color: var(--muted);
     text-decoration: none;
@@ -103,7 +104,7 @@
   <footer>
     <span>We build.</span>
     <nav>
-      <a href="https://x.com/Simpidium" rel="me noopener" target="_blank">X</a>
+      <a href="https://x.com/Simpidium" rel="me noopener" target="_blank" aria-label="X"><svg class="xlogo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
       <a href="mailto:lab@simpidium.com">lab@simpidium.com</a>
     </nav>
   </footer>
