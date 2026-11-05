@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anket · Simpidium Labs</title>
+<meta name="description" content="Dijital Çalışma ve Verimlilik Anketi.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F6F6F6">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://simpidium.com/anket/hp/">
+<link rel="preload" href="/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: "Geist"; src: url("/fonts/Geist-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Geist"; src: url("/fonts/Geist-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+
+  /* Form gömülü olduğu için sayfa yalnız açık temada: Google Formlar'ın zemini (#F6F6F6) ile aynı. */
+  :root {
+    color-scheme: light;
+    --bg: #F6F6F6;
+    --line: #E2E2DE;
+    --fg: #0D0E10;
+    --text: #2B2D31;
+    --muted: #646463;
+    --labs: #535455;
+    --accent: #1E7A8C;
+    --accent-text: #176575;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  a:hover { color: var(--fg); }
+  :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 800px; margin: 0 auto; padding: 0 16px; }
+  header.site {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding: 24px 0 18px; border-bottom: 1px solid var(--line);
+  }
+  .wordmark { color: var(--fg); text-decoration: none; font-weight: 500; font-size: 20px; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+  .wordmark .dot { display: inline-block; width: 0.14em; height: 0.14em; margin-left: 0.05em; background: var(--accent); }
+  .wordmark .labs { color: var(--labs); font-weight: 400; margin-left: 0.28em; }
+  .doccode { font-size: 12px; color: var(--muted); letter-spacing: 0.16em; white-space: nowrap; }
+
+  .note { padding: 16px 0 4px; font-size: 14px; color: var(--muted); }
+
+  .frame { margin: 8px 0 0; }
+  .frame iframe { display: block; width: 100%; height: calc(100vh - 150px); min-height: 640px; border: 0; background: var(--bg); }
+  .fallback { padding: 12px 0; font-size: 14px; color: var(--muted); }
+
+  footer.site {
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    margin-top: 24px; padding: 20px 0 28px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--muted);
+  }
+  footer.site a { color: var(--muted); text-decoration: none; }
+  footer.site a:hover { color: var(--fg); }
+
+  @media (max-width: 560px) {
+    .doccode { display: none; }
+    .frame iframe { height: calc(100vh - 120px); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="wordmark" href="/" aria-label="Simpidium Labs ana sayfa">Simpidium<span class="dot" aria-hidden="true"></span><span class="labs">Labs</span></a>
+    <span class="doccode">ANKET</span>
+  </header>
+
+  <p class="note">Kişisel verilerinizin nasıl işlendiği: <a href="/kv/hp/">bilgilendirme ve açık rıza metni</a>.</p>
+
+  <div class="frame">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform?embedded=true" title="Dijital Çalışma ve Verimlilik Anketi" loading="eager">Yükleniyor…</iframe>
+  </div>
+  <p class="fallback">Form görünmüyorsa <a href="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform" rel="noopener">yeni sekmede açın</a>.</p>
+
+  <footer class="site">
+    <span>Simpidium Labs · <a href="/">simpidium.com</a></span>
+    <a href="mailto:lab@simpidium.com">lab@simpidium.com</a>
+  </footer>
+</div>
+</body>
+</html>
