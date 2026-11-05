@@ -64,12 +64,10 @@
   .wordmark .labs { color: var(--labs); font-weight: 400; margin-left: 0.28em; }
   .doccode { font-size: 12px; color: var(--muted); letter-spacing: 0.16em; white-space: nowrap; }
 
-  .note {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 4px 16px; flex-wrap: wrap;
-    padding: 16px 0 4px; font-size: 14px; color: var(--muted);
-  }
-  .note .newtab { margin-left: auto; font-size: 13px; color: var(--muted); white-space: nowrap; }
-  .note .newtab:hover { color: var(--fg); }
+  .note { padding: 16px 0 4px; font-size: 14px; color: var(--muted); text-align: center; }
+  .newtab { padding: 0 0 4px; font-size: 12.5px; color: var(--muted); text-align: center; }
+  .newtab a { color: var(--muted); }
+  .newtab a:hover { color: var(--fg); }
 
   .frame { flex: 1 1 auto; min-height: 0; margin-top: 8px; }
   .frame iframe { display: block; width: 100%; height: 100%; border: 0; background: var(--paper); }
@@ -91,10 +89,8 @@
       <a class="wordmark" href="/" aria-label="Simpidium Labs ana sayfa">Simpidium<span class="dot" aria-hidden="true"></span><span class="labs">Labs</span></a>
       <span class="doccode">ANKET</span>
     </header>
-    <p class="note">
-      <span>Anket Simpidium Labs tarafından yürütülmektedir. Sorularınız için: <a href="mailto:lab@simpidium.com">lab@simpidium.com</a></span>
-      <a class="newtab" href="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform" target="_blank" rel="noopener">Yeni sekmede aç ↗</a>
-    </p>
+    <p class="note">Anket Simpidium Labs tarafından yürütülmektedir. Sorularınız için: <a href="mailto:lab@simpidium.com">lab@simpidium.com</a></p>
+    <p class="newtab">Form görüntülenmiyorsa yeni sekmede açmak için <a href="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform" target="_blank" rel="noopener">buraya tıklayın</a>.</p>
   </div>
   <div class="frame">
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform?embedded=true" title="Dijital Çalışma ve Verimlilik Anketi" loading="eager">Yükleniyor…</iframe>
