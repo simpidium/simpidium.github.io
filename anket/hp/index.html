@@ -15,11 +15,10 @@
   @font-face { font-family: "Geist"; src: url("/fonts/Geist-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
   @font-face { font-family: "Geist"; src: url("/fonts/Geist-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 
-  /* Siyah zemin üzerinde kâğıt: kâğıt Google Formlar'ın zemini (#F6F6F6), form kartı 640px. */
+  /* Siyah zemin üzerinde kâğıt. Sayfa kaymaz; yalnız form kendi içinde kayar ve ekranın altında biter. */
   :root {
     color-scheme: light;
     --desk: #0D0E10;
-    --desk-muted: #8A8B8C;
     --paper: #F6F6F6;
     --line: #E2E2DE;
     --fg: #0D0E10;
@@ -29,10 +28,14 @@
     --accent: #1E7A8C;
     --accent-text: #176575;
     --col: 640px;
+    --top: 40px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { height: 100%; height: 100dvh; }
+  body { height: 100%; }
   html { -webkit-text-size-adjust: 100%; background: var(--desk); }
   body {
+    padding-top: var(--top);
     background: var(--desk);
     color: var(--text);
     font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -45,11 +48,12 @@
   :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; border-radius: 2px; }
 
   .paper {
-    max-width: 900px; margin: 40px auto 0; padding: 48px 0 8px;
+    display: flex; flex-direction: column;
+    max-width: 900px; height: 100%; min-height: 480px; margin: 0 auto; padding-top: 48px;
     background: var(--paper);
     box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 40px rgba(0,0,0,.35);
   }
-  .col { max-width: var(--col); margin: 0 auto; }
+  .col { width: 100%; max-width: var(--col); margin: 0 auto; }
 
   header.site {
     display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
@@ -60,23 +64,20 @@
   .wordmark .labs { color: var(--labs); font-weight: 400; margin-left: 0.28em; }
   .doccode { font-size: 12px; color: var(--muted); letter-spacing: 0.16em; white-space: nowrap; }
 
-  .note { padding: 16px 0 4px; font-size: 14px; color: var(--muted); }
-
-  .frame { margin: 8px 0 0; }
-  .frame iframe { display: block; width: 100%; height: calc(100vh - 200px); min-height: 640px; border: 0; background: var(--paper); }
-  .fallback { padding: 12px 0 20px; font-size: 13px; color: var(--muted); }
-
-  footer.site {
-    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    padding: 20px 0 36px; font-size: 13px; color: var(--desk-muted);
+  .note {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 4px 16px; flex-wrap: wrap;
+    padding: 16px 0 4px; font-size: 14px; color: var(--muted);
   }
-  footer.site a { color: var(--desk-muted); text-decoration: none; }
-  footer.site a:hover { color: var(--paper); }
+  .note .newtab { margin-left: auto; font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .note .newtab:hover { color: var(--fg); }
+
+  .frame { flex: 1 1 auto; min-height: 0; margin-top: 8px; }
+  .frame iframe { display: block; width: 100%; height: 100%; border: 0; background: var(--paper); }
 
   @media (max-width: 940px) {
-    .paper { margin: 0; padding-top: 28px; box-shadow: none; }
+    :root { --top: 0px; }
+    .paper { padding-top: 24px; box-shadow: none; }
     .col { padding: 0 16px; }
-    .frame iframe { height: calc(100vh - 150px); }
   }
   @media (max-width: 560px) {
     .doccode { display: none; }
@@ -90,19 +91,14 @@
       <a class="wordmark" href="/" aria-label="Simpidium Labs ana sayfa">Simpidium<span class="dot" aria-hidden="true"></span><span class="labs">Labs</span></a>
       <span class="doccode">ANKET</span>
     </header>
-    <p class="note">Anket Simpidium Labs tarafından yürütülmektedir. Sorularınız için: <a href="mailto:lab@simpidium.com">lab@simpidium.com</a></p>
+    <p class="note">
+      <span>Anket Simpidium Labs tarafından yürütülmektedir. Sorularınız için: <a href="mailto:lab@simpidium.com">lab@simpidium.com</a></span>
+      <a class="newtab" href="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform" target="_blank" rel="noopener">Yeni sekmede aç ↗</a>
+    </p>
   </div>
-
   <div class="frame">
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform?embedded=true" title="Dijital Çalışma ve Verimlilik Anketi" loading="eager">Yükleniyor…</iframe>
   </div>
-  <div class="col">
-    <p class="fallback">Form görünmüyorsa <a href="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform" rel="noopener">yeni sekmede açın</a>.</p>
-  </div>
 </main>
-<footer class="site col">
-  <span>Simpidium Labs</span>
-  <a href="/">simpidium.com</a>
-</footer>
 </body>
 </html>
