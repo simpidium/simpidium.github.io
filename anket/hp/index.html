@@ -6,7 +6,7 @@
 <title>Anket · Simpidium Labs</title>
 <meta name="description" content="Dijital Çalışma ve Verimlilik Anketi.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#F6F6F6">
+<meta name="theme-color" content="#0D0E10">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://simpidium.com/anket/hp/">
@@ -15,10 +15,12 @@
   @font-face { font-family: "Geist"; src: url("/fonts/Geist-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
   @font-face { font-family: "Geist"; src: url("/fonts/Geist-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 
-  /* Form gömülü olduğu için sayfa yalnız açık temada: Google Formlar'ın zemini (#F6F6F6) ile aynı. */
+  /* Siyah zemin üzerinde kâğıt: kâğıt Google Formlar'ın zemini (#F6F6F6), form kartı 640px. */
   :root {
     color-scheme: light;
-    --bg: #F6F6F6;
+    --desk: #0D0E10;
+    --desk-muted: #8A8B8C;
+    --paper: #F6F6F6;
     --line: #E2E2DE;
     --fg: #0D0E10;
     --text: #2B2D31;
@@ -26,11 +28,12 @@
     --labs: #535455;
     --accent: #1E7A8C;
     --accent-text: #176575;
+    --col: 640px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; background: var(--desk); }
   body {
-    background: var(--bg);
+    background: var(--desk);
     color: var(--text);
     font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
     font-size: 15px;
@@ -41,10 +44,16 @@
   a:hover { color: var(--fg); }
   :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; border-radius: 2px; }
 
-  .wrap { max-width: 800px; margin: 0 auto; padding: 0 16px; }
+  .paper {
+    max-width: 900px; margin: 40px auto 0; padding: 48px 0 8px;
+    background: var(--paper);
+    box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 40px rgba(0,0,0,.35);
+  }
+  .col { max-width: var(--col); margin: 0 auto; }
+
   header.site {
     display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-    padding: 24px 0 18px; border-bottom: 1px solid var(--line);
+    padding: 0 0 18px; border-bottom: 1px solid var(--line);
   }
   .wordmark { color: var(--fg); text-decoration: none; font-weight: 500; font-size: 20px; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
   .wordmark .dot { display: inline-block; width: 0.14em; height: 0.14em; margin-left: 0.05em; background: var(--accent); }
@@ -54,41 +63,46 @@
   .note { padding: 16px 0 4px; font-size: 14px; color: var(--muted); }
 
   .frame { margin: 8px 0 0; }
-  .frame iframe { display: block; width: 100%; height: calc(100vh - 150px); min-height: 640px; border: 0; background: var(--bg); }
-  .fallback { padding: 12px 0; font-size: 14px; color: var(--muted); }
+  .frame iframe { display: block; width: 100%; height: calc(100vh - 200px); min-height: 640px; border: 0; background: var(--paper); }
+  .fallback { padding: 12px 0 20px; font-size: 13px; color: var(--muted); }
 
   footer.site {
     display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    margin-top: 24px; padding: 20px 0 28px; border-top: 1px solid var(--line);
-    font-size: 13px; color: var(--muted);
+    padding: 20px 0 36px; font-size: 13px; color: var(--desk-muted);
   }
-  footer.site a { color: var(--muted); text-decoration: none; }
-  footer.site a:hover { color: var(--fg); }
+  footer.site a { color: var(--desk-muted); text-decoration: none; }
+  footer.site a:hover { color: var(--paper); }
 
+  @media (max-width: 940px) {
+    .paper { margin: 0; padding-top: 28px; box-shadow: none; }
+    .col { padding: 0 16px; }
+    .frame iframe { height: calc(100vh - 150px); }
+  }
   @media (max-width: 560px) {
     .doccode { display: none; }
-    .frame iframe { height: calc(100vh - 120px); }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="site">
-    <a class="wordmark" href="/" aria-label="Simpidium Labs ana sayfa">Simpidium<span class="dot" aria-hidden="true"></span><span class="labs">Labs</span></a>
-    <span class="doccode">ANKET</span>
-  </header>
-
-  <p class="note">Kişisel verilerinizin nasıl işlendiği: <a href="/kv/hp/">bilgilendirme ve açık rıza metni</a>.</p>
+<main class="paper">
+  <div class="col">
+    <header class="site">
+      <a class="wordmark" href="/" aria-label="Simpidium Labs ana sayfa">Simpidium<span class="dot" aria-hidden="true"></span><span class="labs">Labs</span></a>
+      <span class="doccode">ANKET</span>
+    </header>
+    <p class="note">Anket Simpidium Labs tarafından yürütülmektedir. Sorularınız için: <a href="mailto:lab@simpidium.com">lab@simpidium.com</a></p>
+  </div>
 
   <div class="frame">
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform?embedded=true" title="Dijital Çalışma ve Verimlilik Anketi" loading="eager">Yükleniyor…</iframe>
   </div>
-  <p class="fallback">Form görünmüyorsa <a href="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform" rel="noopener">yeni sekmede açın</a>.</p>
-
-  <footer class="site">
-    <span>Simpidium Labs · <a href="/">simpidium.com</a></span>
-    <a href="mailto:lab@simpidium.com">lab@simpidium.com</a>
-  </footer>
-</div>
+  <div class="col">
+    <p class="fallback">Form görünmüyorsa <a href="https://docs.google.com/forms/d/e/1FAIpQLSepMe-Nbg_8Y0kQNuw45YRwSee2nA78JN6cwNsBqF238Dpe0g/viewform" rel="noopener">yeni sekmede açın</a>.</p>
+  </div>
+</main>
+<footer class="site col">
+  <span>Simpidium Labs</span>
+  <a href="/">simpidium.com</a>
+</footer>
 </body>
 </html>
