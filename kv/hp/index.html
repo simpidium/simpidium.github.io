@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hopaport · Kişisel verilerin işlenmesi · Simpidium Labs</title>
+<meta name="description" content="Hopaport gelişim programı anketi: kişisel verilerin işlenmesi hakkında bilgilendirme ve yurt dışına aktarım için açık rıza metni.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FAFAF8">
+<meta name="theme-color" content="#0D0E10" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://simpidium.com/kv/hp/">
+<link rel="preload" href="/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: "Geist"; src: url("/fonts/Geist-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Geist"; src: url("/fonts/Geist-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+
+  :root {
+    --bg: #FAFAF8;
+    --surface: #F1F1EE;
+    --line: #E2E2DE;
+    --fg: #0D0E10;
+    --text: #2B2D31;
+    --muted: #646463;
+    --labs: #535455;
+    --accent: #1E7A8C;
+    --accent-text: #176575;
+    --measure: 68ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0D0E10;
+      --surface: #15171A;
+      --line: #24272C;
+      --fg: #F2F2F0;
+      --text: #C9CACC;
+      --muted: #8E8E92;
+      --labs: #B3B3B4;
+      --accent: #1E7A8C;
+      --accent-text: #4FB3C6;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 24px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 24px;
+  }
+  a { color: var(--accent-text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  a:hover { color: var(--fg); }
+  :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; border-radius: 2px; }
+
+  .skip { position: absolute; left: -9999px; top: 12px; background: var(--fg); color: var(--bg); padding: 8px 12px; text-decoration: none; }
+  .skip:focus { left: 24px; }
+
+  .wrap { max-width: var(--measure); margin: 0 auto; }
+
+  header.site {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 28px 0 0;
+  }
+  .wordmark {
+    color: var(--fg); text-decoration: none; font-weight: 500;
+    font-size: 20px; letter-spacing: -0.02em; line-height: 1;
+  }
+  .wordmark .dot { display: inline-block; width: 0.14em; height: 0.14em; margin-left: 0.05em; background: var(--accent); }
+  .wordmark .labs { color: var(--labs); font-weight: 400; margin-left: 0.28em; }
+  .wordmark, .doccode { white-space: nowrap; }
+  .doccode { font-size: 12px; color: var(--muted); letter-spacing: 0.16em; }
+  header.site { border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+
+  .hero { padding: 72px 0 40px; border-bottom: 1px solid var(--line); }
+  .eyebrow { font-size: 12px; color: var(--accent-text); letter-spacing: 0.16em; margin-bottom: 18px; }
+  h1 {
+    color: var(--fg); font-weight: 500; letter-spacing: -0.02em;
+    font-size: clamp(32px, 5.2vw, 48px); line-height: 1.1;
+  }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 24px; font-size: 14px; color: var(--muted); }
+  .meta b { color: var(--text); font-weight: 500; }
+  .draft {
+    display: inline-block; margin-top: 20px; font-size: 13px; color: var(--fg);
+    border: 1px solid var(--accent); padding: 4px 10px; border-radius: 3px;
+  }
+  .lead { margin-top: 28px; font-size: 19px; line-height: 1.6; color: var(--fg); }
+  .lead + p { margin-top: 14px; }
+
+  nav.toc { padding: 32px 0; border-bottom: 1px solid var(--line); }
+  nav.toc h2 { font-size: 12px; color: var(--muted); font-weight: 400; letter-spacing: 0.16em; margin-bottom: 12px; }
+  nav.toc ol { list-style: none; columns: 2; column-gap: 32px; }
+  nav.toc li { break-inside: avoid; padding: 3px 0; font-size: 15px; }
+  nav.toc a { color: var(--text); text-decoration: none; }
+  nav.toc a:hover { color: var(--fg); }
+  nav.toc .n { color: var(--accent-text); font-variant-numeric: tabular-nums; margin-right: 8px; }
+
+  section { padding: 40px 0 8px; }
+  h2.sec {
+    color: var(--fg); font-weight: 500; font-size: 22px; letter-spacing: -0.01em; line-height: 1.3;
+    display: flex; gap: 14px; align-items: baseline; margin-bottom: 16px;
+  }
+  h2.sec .n { color: var(--accent-text); font-size: 15px; font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  h2.sec a.anchor { color: var(--muted); text-decoration: none; font-size: 15px; opacity: 0; transition: opacity .15s; margin-left: auto; }
+  h2.sec:hover a.anchor, h2.sec a.anchor:focus-visible { opacity: 1; }
+  section p + p { margin-top: 12px; }
+  section ul, section ol.rights { margin: 12px 0 0 0; padding-left: 0; list-style: none; }
+  section li { position: relative; padding-left: 22px; margin-top: 8px; }
+  section li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 6px; height: 6px; background: var(--accent); }
+  strong { color: var(--fg); font-weight: 500; }
+  .note { margin-top: 16px; font-size: 15px; color: var(--muted); border-left: 2px solid var(--line); padding-left: 14px; }
+
+  .table { margin-top: 16px; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .row { display: grid; grid-template-columns: 1.1fr 1.6fr 0.7fr; gap: 16px; padding: 14px 16px; border-top: 1px solid var(--line); font-size: 15px; }
+  .row:first-child { border-top: 0; }
+  .row.head { background: var(--surface); color: var(--muted); font-size: 13px; letter-spacing: 0.04em; }
+  .row b { color: var(--fg); font-weight: 500; display: block; }
+  .row span.sub { color: var(--muted); font-size: 14px; }
+
+  .history { margin-top: 12px; font-size: 15px; }
+  .history div { display: grid; grid-template-columns: 5.5em 7.5em 1fr; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
+  .history div:first-child { border-top: 0; color: var(--muted); font-size: 13px; }
+
+  footer.site {
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    margin-top: 64px; padding: 28px 0; border-top: 1px solid var(--line);
+    font-size: 14px; color: var(--muted);
+  }
+  footer.site a { color: var(--muted); text-decoration: none; }
+  footer.site a:hover { color: var(--fg); }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; padding: 0 18px; }
+    .doccode .k { display: none; }
+    .hero { padding: 48px 0 32px; }
+    .lead { font-size: 17px; }
+    nav.toc ol { columns: 1; }
+    .row { grid-template-columns: 1fr; gap: 4px; }
+    .row.head { display: none; }
+    .row .cty::before { content: "Ülke: "; color: var(--muted); }
+    .history div { grid-template-columns: 4.5em 1fr; }
+    .history div span:last-child { grid-column: 1 / -1; }
+  }
+
+  @media print {
+    :root { --bg: #fff; --surface: #f3f3f3; --line: #ccc; --fg: #000; --text: #111; --muted: #555; --accent-text: #000; }
+    body { font-size: 11pt; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .skip, nav.toc, h2.sec a.anchor { display: none; }
+    .hero { padding: 0 0 16pt; }
+    section { padding: 14pt 0 0; break-inside: avoid-page; }
+    a { color: #000; text-decoration: none; }
+    section a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+    footer.site { margin-top: 24pt; }
+  }
+</style>
+<style>
+  .part { margin-top: 56px; padding-top: 28px; border-top: 2px solid var(--fg); }
+  .part .tag { font-size: 12px; color: var(--accent-text); letter-spacing: 0.16em; }
+  .part h2.ptitle { color: var(--fg); font-weight: 500; font-size: clamp(24px, 3.6vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin-top: 10px; }
+  .part .pnote { margin-top: 12px; color: var(--muted); font-size: 15px; }
+  .consent { margin-top: 20px; background: var(--surface); border-left: 3px solid var(--accent); padding: 16px 18px; }
+  .consent p { color: var(--fg); }
+  .ph { background: var(--surface); border: 1px dashed var(--muted); padding: 0 4px; border-radius: 2px; font-size: 0.95em; }
+  @media print { .part { break-before: page; } .ph { border-color: #555; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#icerik">İçeriğe geç</a>
+<div class="wrap">
+  <header class="site">
+    <a class="wordmark" href="/" aria-label="Simpidium Labs ana sayfa">Simpidium<span class="dot" aria-hidden="true"></span><span class="labs">Labs</span></a>
+    <span class="doccode"><span class="k">BİLGİLENDİRME · </span>KV-HP-0.1</span>
+  </header>
+
+  <main id="icerik">
+    <div class="hero">
+      <p class="eyebrow">VERİ KORUMA · HOPAPORT</p>
+      <h1>Kişisel verilerin işlenmesi</h1>
+      <div class="meta">
+        <span>Sürüm <b>0.1</b></span>
+        <span>Yürürlük <b>—</b></span>
+        <span>Son güncelleme <b>5 Kasım 2026</b></span>
+      </div>
+      <p class="draft">Taslak — yürürlükte değildir</p>
+      <p class="lead">Hopaport, iş süreçlerini kolaylaştırmak ve verimliliği artırmak amacıyla çalışanlarına yönelik bir gelişim programı yürütür. Programın ilk adımı Dijital Çalışma ve Verimlilik Anketi'dir.</p>
+      <p>Bu sayfada iki ayrı metin vardır: anket kapsamında kişisel verilerinizin nasıl işlendiğini anlatan <a href="#bilgilendirme">bilgilendirme metni</a> ve cevaplarınızın yurt dışındaki hizmet sağlayıcılara aktarılması için <a href="#acik-riza">açık rıza metni</a>.</p>
+    </div>
+
+    <nav class="toc" aria-label="İçindekiler">
+      <h2>İÇİNDEKİLER</h2>
+      <ol>
+        <li><a href="#sorumlu"><span class="n">01</span>Veri sorumlusu</a></li>
+        <li><a href="#amac"><span class="n">02</span>Amaç</a></li>
+        <li><a href="#veriler"><span class="n">03</span>İşlenen veriler</a></li>
+        <li><a href="#aktarim"><span class="n">04</span>Kimler görür, kimlere aktarılır</a></li>
+        <li><a href="#yontem"><span class="n">05</span>Yöntem ve hukuki sebep</a></li>
+        <li><a href="#saklama"><span class="n">06</span>Saklama süresi</a></li>
+        <li><a href="#haklar"><span class="n">07</span>Haklarınız ve başvuru</a></li>
+        <li><a href="#acik-riza"><span class="n">08</span>Yurt dışına aktarım için açık rıza</a></li>
+        <li><a href="#degisiklikler"><span class="n">09</span>Değişiklikler</a></li>
+      </ol>
+    </nav>
+
+    <div class="part" id="bilgilendirme">
+      <p class="tag">METİN 1</p>
+      <h2 class="ptitle">Bilgilendirme metni</h2>
+      <p class="pnote">6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 10. maddesi uyarınca. Bu metin bilgi vermek içindir; sizden onay istemez.</p>
+    </div>
+
+    <section id="sorumlu" aria-labelledby="h-sorumlu">
+      <h2 class="sec" id="h-sorumlu"><span class="n">01</span>Veri sorumlusu<a class="anchor" href="#sorumlu" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <p><strong>Park Denizcilik ve Hopa Liman İşletmeleri A.Ş. (Hopaport)</strong>, Ortahopa Mah. Liman Cad., 08600 Hopa / Artvin.</p>
+      <p>Programı Hopaport adına <strong>Simpidium Labs</strong> yürütür. Simpidium Labs, verileri yalnız Hopaport'un talimatıyla ve bu metinde yazan amaç için işleyen yüklenicidir (veri işleyen).</p>
+    </section>
+
+    <section id="amac" aria-labelledby="h-amac">
+      <h2 class="sec" id="h-amac"><span class="n">02</span>Amaç<a class="anchor" href="#amac" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <p>Verileriniz, iş süreçlerini geliştirme programının planlanması ve yürütülmesi için işlenir:</p>
+      <ul>
+        <li>işlerde kullanılan araç ve yöntemlerin, ihtiyaç duyulan alanların belirlenmesi,</li>
+        <li>eğitim ve desteğin içeriğinin, gruplarının ve takviminin planlanması,</li>
+        <li>programın ilerleyişinin izlenmesi.</li>
+      </ul>
+      <p>Cevaplarınız performans değerlendirmesinde kullanılmaz.</p>
+    </section>
+
+    <section id="veriler" aria-labelledby="h-veriler">
+      <h2 class="sec" id="h-veriler"><span class="n">03</span>İşlenen veriler<a class="anchor" href="#veriler" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <ul>
+        <li><strong>Kimlik ve iletişim:</strong> ad soyad, e-posta adresi.</li>
+        <li><strong>Mesleki bilgi:</strong> departman, görev düzeyi.</li>
+        <li><strong>Anket cevapları:</strong> kullandığınız programlar ve diller, bilgisayar ve yapay zekâ kullanımınız, işlerinizin tarifi, programa ilişkin beklenti ve tercihleriniz.</li>
+      </ul>
+      <p class="note">Özel nitelikli kişisel veri (sağlık, inanç, biyometrik veri gibi) istenmez.</p>
+    </section>
+
+    <section id="aktarim" aria-labelledby="h-aktarim">
+      <h2 class="sec" id="h-aktarim"><span class="n">04</span>Kimler görür, kimlere aktarılır<a class="anchor" href="#aktarim" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <p>Anket isimlidir. Adınızı, e-posta adresinizi ve kişi bazındaki cevaplarınızı yalnız programı yürüten <strong>Simpidium Labs</strong> görür; bu bilgiler Hopaport'la paylaşılmaz. Hopaport'a, departman ve görev düzeyine göre hazırlanmış, isim içermeyen toplu sonuçlar iletilir. Kişi sayısı az olan gruplar raporda birleştirilir.</p>
+      <p>Anket ve değerlendirme için aşağıdaki hizmet sağlayıcılar kullanılır. Sunucuları ABD'dedir; bu nedenle cevaplarınızın onlara gitmesi yurt dışına aktarımdır ve <a href="#acik-riza">açık rızanıza</a> dayanır.</p>
+      <div class="table" role="table" aria-label="Hizmet sağlayıcılar">
+        <div class="row head" role="row"><span role="columnheader">Sağlayıcı</span><span role="columnheader">Ne için</span><span role="columnheader">Ülke</span></div>
+        <div class="row" role="row"><span role="cell"><b>Google LLC</b><span class="sub">Google Formlar, E-Tablolar</span></span><span role="cell">Anketin yürütülmesi ve cevapların saklanması</span><span role="cell" class="cty">ABD</span></div>
+        <div class="row" role="row"><span role="cell"><b>Anthropic PBC</b><span class="sub">Claude</span></span><span role="cell">Cevapların değerlendirilmesi</span><span role="cell" class="cty">ABD</span></div>
+      </div>
+    </section>
+
+    <section id="yontem" aria-labelledby="h-yontem">
+      <h2 class="sec" id="h-yontem"><span class="n">05</span>Yöntem ve hukuki sebep<a class="anchor" href="#yontem" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <p>Veriler, doldurduğunuz elektronik anket formu aracılığıyla, otomatik yolla toplanır.</p>
+      <p>Hukuki sebep, Hopaport'un çalışanlarına uygun bir gelişim programı planlamasındaki meşru menfaatidir (Kanun md. 5/2-f). Yurt dışına aktarım ise ayrıca açık rızanıza dayanır (Kanun md. 9/6-a).</p>
+    </section>
+
+    <section id="saklama" aria-labelledby="h-saklama">
+      <h2 class="sec" id="h-saklama"><span class="n">06</span>Saklama süresi<a class="anchor" href="#saklama" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <p>Veriler, anketin tamamlanmasından itibaren en geç bir yıl saklanır. Süre dolduğunda ya da program daha önce sona ererse sona erdiği tarihte silinir, yok edilir ya da anonim hâle getirilir.</p>
+    </section>
+
+    <section id="haklar" aria-labelledby="h-haklar">
+      <h2 class="sec" id="h-haklar"><span class="n">07</span>Haklarınız ve başvuru<a class="anchor" href="#haklar" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <p>Kanun'un 11. maddesi kapsamındaki haklarınız için <a href="mailto:lab@simpidium.com">lab@simpidium.com</a> adresine yazılı olarak başvurabilirsiniz. Başvurular Hopaport adına alınır ve en geç otuz gün içinde ücretsiz sonuçlandırılır.</p>
+    </section>
+
+    <div class="part" id="acik-riza">
+      <p class="tag">METİN 2</p>
+      <h2 class="ptitle">Yurt dışına aktarım için açık rıza metni</h2>
+      <p class="pnote">Kanun'un 9. maddesinin altıncı fıkrasının (a) bendi uyarınca.</p>
+    </div>
+
+    <section aria-labelledby="h-riza">
+      <h2 class="sec" id="h-riza"><span class="n">08</span>Aktarım ve riskleri<a class="anchor" href="#acik-riza" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <p>Anketteki cevaplarınız, bu anketle sınırlı olarak, <strong>Google LLC</strong> (Google Formlar ve E-Tablolar) ve <strong>Anthropic PBC</strong> (Claude) sistemlerinde, ABD'de saklanır ve işlenir. Bunun için açık rızanız gerekir. Karar vermeden önce şunları bilmenizi isteriz:</p>
+      <ul>
+        <li>Kişisel Verileri Koruma Kurulu'nun ABD için verdiği bir yeterlilik kararı yoktur; Türkiye'deki koruma ve başvuru yolları bu şirketlere karşı aynı etkiyle işlemeyebilir.</li>
+        <li>ABD mevzuatı, o ülkedeki resmî makamlara bazı durumlarda bu verilere erişim imkânı verebilir.</li>
+        <li>Rızanızı istediğiniz zaman geri alabilirsiniz; geri alma ileriye dönük etkilidir. Bunun için 07'deki başvuru yolunu kullanabilirsiniz.</li>
+      </ul>
+      <div class="consent">
+        <p>Açık rıza vermemeniz, programa ve eğitimlere katılımınızı etkilemez.</p>
+      </div>
+      <p style="margin-top:16px">Rızanızı anket formundaki ayrı onay kutusuyla verirsiniz.</p>
+    </section>
+
+    <section id="degisiklikler" aria-labelledby="h-degisiklikler">
+      <h2 class="sec" id="h-degisiklikler"><span class="n">09</span>Değişiklikler<a class="anchor" href="#degisiklikler" aria-label="Bu bölümün bağlantısı">#</a></h2>
+      <p>Bu metin güncellendiğinde sürüm numarası ve tarih değişir.</p>
+      <div class="history" role="table" aria-label="Sürüm geçmişi">
+        <div role="row"><span role="columnheader">Sürüm</span><span role="columnheader">Tarih</span><span role="columnheader">Değişiklik</span></div>
+        <div role="row"><span role="cell">0.1</span><span role="cell">5 Kasım 2026</span><span role="cell">İlk taslak.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <span>Simpidium Labs · <a href="/">simpidium.com</a></span>
+    <a href="mailto:lab@simpidium.com">lab@simpidium.com</a>
+  </footer>
+</div>
+</body>
+</html>
