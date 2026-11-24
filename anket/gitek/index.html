@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anket · Simpidium Labs</title>
+<meta name="description" content="GİTEK Dijital Çözümler Atölyesi — Katılımcı Anketi.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0D0E10">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://simpidium.com/anket/gitek/">
+<link rel="preload" href="/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: "Geist"; src: url("/fonts/Geist-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Geist"; src: url("/fonts/Geist-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+
+  /* Siyah zemin üzerinde kâğıt. Sayfa kaymaz; yalnız form kendi içinde kayar ve ekranın altında biter. */
+  :root {
+    color-scheme: light;
+    --desk: #0D0E10;
+    --paper: #F6F6F6;
+    --line: #E2E2DE;
+    --fg: #0D0E10;
+    --text: #2B2D31;
+    --muted: #646463;
+    --labs: #535455;
+    --accent: #1E7A8C;
+    --accent-text: #176575;
+    --col: 640px;
+    --top: 40px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { height: 100%; height: 100dvh; }
+  body { height: 100%; }
+  html { -webkit-text-size-adjust: 100%; background: var(--desk); }
+  body {
+    padding-top: var(--top);
+    background: var(--desk);
+    color: var(--text);
+    font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  a:hover { color: var(--fg); }
+  :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; border-radius: 2px; }
+
+  .paper {
+    display: flex; flex-direction: column;
+    max-width: 900px; height: 100%; min-height: 480px; margin: 0 auto; padding-top: 48px;
+    background: var(--paper);
+    box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 40px rgba(0,0,0,.35);
+  }
+  .col { width: 100%; max-width: var(--col); margin: 0 auto; }
+
+  header.site {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding: 0 0 18px; border-bottom: 1px solid var(--line);
+  }
+  .wordmark { color: var(--fg); text-decoration: none; font-weight: 500; font-size: 20px; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+  .wordmark .dot { display: inline-block; width: 0.14em; height: 0.14em; margin-left: 0.05em; background: var(--accent); }
+  .wordmark .labs { color: var(--labs); font-weight: 400; margin-left: 0.28em; }
+  .doccode { font-size: 12px; color: var(--muted); letter-spacing: 0.16em; white-space: nowrap; }
+
+  .note { padding: 16px 0 4px; font-size: 14px; color: var(--muted); text-align: center; }
+  .newtab { padding: 0 0 4px; font-size: 12.5px; color: var(--muted); text-align: center; }
+  .newtab a { color: var(--muted); }
+  .newtab a:hover { color: var(--fg); }
+
+  .frame { flex: 1 1 auto; min-height: 0; margin-top: 8px; }
+  .frame iframe { display: block; width: 100%; height: 100%; border: 0; background: var(--paper); }
+
+  @media (max-width: 940px) {
+    :root { --top: 0px; }
+    .paper { padding-top: 24px; box-shadow: none; }
+    .col { padding: 0 16px; }
+  }
+  @media (max-width: 560px) {
+    .doccode { display: none; }
+  }
+</style>
+</head>
+<body>
+<main class="paper">
+  <div class="col">
+    <header class="site">
+      <a class="wordmark" href="/" aria-label="Simpidium Labs ana sayfa">Simpidium<span class="dot" aria-hidden="true"></span><span class="labs">Labs</span></a>
+      <span class="doccode">ANKET</span>
+    </header>
+    <p class="note">Anket Simpidium Labs tarafından yürütülmektedir. Sorularınız için: <a href="mailto:lab@simpidium.com">lab@simpidium.com</a></p>
+    <p class="newtab">Form görüntülenmiyorsa yeni sekmede açmak için <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWlFyc07p8hs3u4tq336_yeR36hmakB_-cEAbeczjdZ7qpWA/viewform" target="_blank" rel="noopener">buraya tıklayın</a>.</p>
+  </div>
+  <div class="frame">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdWlFyc07p8hs3u4tq336_yeR36hmakB_-cEAbeczjdZ7qpWA/viewform?embedded=true" title="GİTEK Dijital Çözümler Atölyesi — Katılımcı Anketi" loading="eager">Yükleniyor…</iframe>
+  </div>
+</main>
+</body>
+</html>
